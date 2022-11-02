@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Huddle landing page with single introductory section
+    </title>
+    <script
+      src="https://kit.fontawesome.com/cd2d31ebdf.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Poppins:wght@400;600&family=Red+Hat+Display:wght@500;700;900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Outfit:wght@400;700&family=Poppins:wght@400;600&family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* Remove default margin */
+      body,
+      h2,
+      p,
+      img,
+      a,
+      div {
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-image: url("images/bg-desktop.svg");
+        background-color: hsl(257, 40%, 49%);
+        min-height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /*display: flex;
+        align-items: center;
+        padding-bottom: 35px;*/
+      }
+
+      /*inside  the body and is parent containes*/
+      .main_container {
+        max-width: 1320px;
+        margin: 0 auto;
+        height: 100vh;
+        /*padding-bottom: 30px;*/
+      }
+      
+      /*contains the illustration and the text with button*/
+      .wrapper {
+        height: 90%;
+        margin: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 40px 0;
+        margin: 0 2rem;
+      }
+
+      /*top-left top container*/
+      .logo_container img {
+        width: 12em;
+        /*margin: 20px 0px 35px 0px;*/
+        padding-bottom: 20px;
+      }
+
+      .main_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+       /* margin-top: 30px;*/
+      }
+  
+      /*right of main_area*/
+      .text_area {
+        text-align: left;
+        color: white;
+      }
+      .text_area #heading_1 {
+        margin-top: 50px;/*margin-bottom 20px*/
+        font-size: 35px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+      }
+      .text_area p {
+        font-family: 'Open Sans', sans-serif;
+        /*margin-top: 40px;*/margin-bottom: 30px;
+        font-size: 16.5px;
+        line-height: 1.6;
+      }
+
+      /*style button*/
+      .text_area a {
+        display: inline-block; /*beacuse <a> is aligned in-line due to flex parent; to be able to adjust width and height of <a>, style it as inline-block*/
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;    
+        background-color: white;    
+        border-radius: 30px;
+        padding: 15px 55px;
+       /* font-size: 20px;
+        color: hsl(257, 40%, 49%);*/
+        box-shadow: 0 8px 17px -8px rgba(0,0,0,.8);
+        margin-top: 35px;
+        transition: all .3s ease;
+      }
+
+      .text_area a:hover{
+        background-color: hsl(300, 69%, 71%);
+        color: white;
+        
+      }
+      .social {
+        text-align: right;
+        margin-bottom: 35px;
+        /*display: flex;
+        justify-content: flex-end;*/
+      }
+
+      .social a i {
+        font-size: 25px;
+        color: white;
+        position: relative; /*using pseudo elem eg ::After to create absolute circles*/
+        transition: all .3s ease;   
+      }
+
+      .social a:not(:first-child){
+        margin-left: 2rem;
+      }
+
+      .social a i::after{
+        content: "";
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        border: 2px solid white;
+        border-radius: 50%;
+        left: -9px;
+        bottom: -6px; 
+        transition: all .3s ease;   
+      }
+      .social a i[class="fa-brands fa-facebook-f"]::after{
+        left: -12px;
+        bottom: -6px;    
+      }
+
+      .social a:nth-child(2){
+        margin-left: 2.5rem;
+      }
+
+      .social a:hover i{
+        color: hsl(300, 69%, 71%);
+      }
+
+      .social a i:hover::after{
+        border-color: hsl(300, 69%, 71%);
+      }
+
+      @media only screen and (max-width: 1440px){
+        .illustration_mockup img{
+          width: 100%;
+        }
+      }
+        @media only screen and (max-width: 768px){
+          .main_wrapper{
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .text_area{
+            text-align: center;
+          }
+          .text_area h1{
+            font-size: 22px;
+          }
+
+          .social{
+            text-align: center;
+            margin-top: 50px;
+          }
+
+          .text_area a{
+            padding: 10px 70px;
+          }
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <div class="wrapper">
+        <div class="logo_container">
+          <img src="./images/logo.svg" alt="huddle logo" srcset="" id="logo" />
+        </div>
+        <div class="main_wrapper">
+          <div class="illustration_mockup">
+            <img
+              src="./images/illustration-mockups.svg"
+              alt="mockup"
+              srcset=""
+            />
+          </div>
+          <div class="text_area">
+            <p id="heading_1">Build The Community Your Fans Will Love</p>
+            <p>
+              Huddle re-imagines the way we build communities. You have a voice,
+              but so does your audience. Create connections with your users as
+              you engage in genuine discussion.
+            </p>
+            <a href="#">Register</a>
+          </div>
+        </div>
+        <!--main wrapper section end-->
+        <div class="social">
+          <!--<img src="./images/facebook.svg" width="" alt="facebook" />
+          <img src="./images/twitter.svg" alt="twitter" width="" />
+          <img src="./images/square-instagram.svg" alt="instagram" width="" />-->
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <!--social section ends-->
+      <!--wrapper section ends-->
+    </div>
+    <!--containes section ends-->
+  </body>
+</html>
